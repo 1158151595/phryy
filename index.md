@@ -1,37 +1,72 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
 
-You can use the [editor on GitHub](https://github.com/1158151595/phryy/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>个人主页</title>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/util/pdfobject.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <style type="text/css">
+        .redBall{
+            color: red;
+        }
+        .blueBall{
+            color: blue;
+        }
+    </style>
+</head>
+<body style="height: 100%;width: 100%;">
+<div style="width: 600px;height: 50px;margin: 10px auto;">
+    <table style="width: 600px;text-align: center;">
+       <tr>
+           <td><a href="index">首页</a></td>
+           <td><a href="randomtest">测试机选</a></td>
+           <td><a href="test">测试算法</a></td>
+           <td><a href="forecast">往期预测结果</a></td>
+       </tr>
+    </table>
+</div>
+<div style="width: 600px;height: 400px;border: 1px gainsboro solid;margin: 20px auto;">
+    <span>系统随机生成的五注双色球</span><br />
+    <div id="forecastShow">
+        <span id="num">期号：</span>
+        <table style="width: 600px;height: 380px;text-align: center;">
+            <thead align="center !important">
+                <tr>
+                    <th>红球</th>
+                    <th>蓝球</th>
+                    <th>中奖等级</th>
+                </tr>
+            </thead>
+            <tbody id="ballsBody">
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/1158151595/phryy/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+            </tbody>
+        </table>
+    </div>
+    <div id="chooseDiv">
+        <table style="width: 600px;height: 400px;text-align: center;">
+            <tr>
+                <td class="redBall">红球杀号</td>
+                <td><input type="text" id="redKill" /></td>
+                <td class="blueBall">蓝球杀号</td>
+                <td><input type="text" id="blueKill" /></td>
+            </tr>
+            <tr>
+                <td class="redBall">红球最小</td>
+                <td><input type="text" id="redMin" /></td>
+                <td class="redBall">红球最大</td>
+                <td><input type="text" id="redMax" /></td>
+            </tr>
+            <tr>
+                <td class="blueBall">蓝球最小</td>
+                <td><input type="text" id="blueMin" /></td>
+                <td class="blueBall">蓝球最大</td>
+                <td><input type="text" id="blueMax" /></td>
+            </tr>
+        </table>
+        <button onclick="getForecast()">确定</button>
+    </div>
+</div>
+</body>
+</html>
